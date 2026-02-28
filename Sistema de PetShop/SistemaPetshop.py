@@ -3,7 +3,6 @@ Pets = []
 Relatorio = []
 
 ##from Funcoes import <------Todas as funções criadas 
-
 print("=== SISTEMA DE PETSHOP ===")
 print("1 - Cadastrar Cliente")
 print("2 - Cadastrar pet")
