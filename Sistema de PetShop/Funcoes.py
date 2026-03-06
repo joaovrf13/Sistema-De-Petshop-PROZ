@@ -47,14 +47,37 @@ def Listar_Pets():
    print("Nome: ", Pet["Nome"])
    print("Raca: ", Pet["Raca"])
    print("Sexo: ", Pet["Sexo"])
+
+
+def Cadastar_Servicos():
+ print("== Serviços ==")
+ print("1 - Banho: R$ 80 ")
+ print("2 - Tosa: R$ 100 ")
+ print("3 - Consulta: R$ 120 ")
+ print("4 - Hospedagem: R$ 150 ")
  
-def Exibir_Servicos():
-  print("== Serviços ==")
-  print("Banho: R$ 80 ")
-  print("Tosa: R$ 100 ")
-  print("Consulta: R$ 120 ")
-  print("Hospedagem: R$ 150 ")
+ Servicos_Disponiveis = {
+      1:{'nome': 'Banho','preco': 80},
+      2:{'nome': 'Tosa','preco': 100},
+      3:{'nome': 'Consulta','preco': 120},
+      4:{'nome': 'Hospedagem','preco': 150},
+    }
+ 
+ while True:
+   OpcaoServico = int(input("Selecione um serviço: "))
+   if OpcaoServico in Servicos_Disponiveis:
+    servico = Servicos_Disponiveis[OpcaoServico]
+    Servicos.append(servico)
+    break
+   else:
+    print("Serviço Indisponivel")
+
+
   
+
+ 
+
+
 def Exibir_Menu():
  print("== SISTEMA PETSHOP ==")
  print("1 - Cadastrar Cliente")
@@ -65,6 +88,7 @@ def Exibir_Menu():
  print("6 - Exibir relatório")
  print("7 - Buscar pet")
  print("8 - Sair")
+ 
 
 
 
