@@ -35,6 +35,7 @@ def Cadastrar_Pets():
        return
      
     Pet = {
+     "NomeDono" : NomeDono,
      "NomePet" : NomePet,
      "Raca" : Raca,
      "Sexo" : Sexo,
@@ -90,20 +91,24 @@ def Cadastar_Servicos():
    else:
     print("Serviço Indisponivel")
 
-  
-    
- 
- 
-
+def Buscar_Pet():
+ Opcao_Busca = input("Digite o nome do pet que você deseja pesquisar: ")
+ for Pet in Pets:
+   if Pet["NomePet"] == Opcao_Busca:
+     print("Dono:", Pet["NomeDono"])
+     print("Nome: ", Pet["NomePet"])
+     print("Raca: ", Pet["Raca"])
+     print("Sexo: ", Pet["Sexo"])
+     print("---------------------") 
+     break
+   else:
+     print("Pet não encontrado")
+     return
 
 def Relatorio():
  for cliente, pet, servico in zip(Clientes,Pets,Servicos):
    print("Cliente:", cliente , "| Pet:", pet, "| Serviços:", servico)
   
-
- 
-
-
 def Exibir_Menu():
  print("== SISTEMA PETSHOP ==")
  print("1 - Cadastrar Cliente")
