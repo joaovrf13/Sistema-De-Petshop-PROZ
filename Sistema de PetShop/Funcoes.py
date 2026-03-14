@@ -35,7 +35,6 @@ def Cadastrar_Pets():
        return
      
     Pet = {
-     "NomeDono" : NomeDono,
      "NomePet" : NomePet,
      "Raca" : Raca,
      "Sexo" : Sexo,
@@ -63,12 +62,6 @@ def Listar_Pets():
    print("---------------------")
 
 def Cadastar_Servicos():
- print("== Serviços ==")
- print("1 - Banho: R$ 80 ")
- print("2 - Tosa: R$ 100 ")
- print("3 - Consulta: R$ 120 ")
- print("4 - Hospedagem: R$ 150 ")
- 
  Servicos_Disponiveis = {
       1:{'nome': 'Banho','preco': 80},
       2:{'nome': 'Tosa','preco': 100},
@@ -76,29 +69,40 @@ def Cadastar_Servicos():
       4:{'nome': 'Hospedagem','preco': 150},
     }
  
- Nome_Pet = input("Digite o nome do pet: ") 
- while True:
-   OpcaoServico = int(input("Selecione um serviço: "))
-   if OpcaoServico in Servicos_Disponiveis:
-     servico = {
-       "pet": Nome_Pet,
-       "servico": Servicos_Disponiveis[OpcaoServico]["nome"],
-       "preco": Servicos_Disponiveis[OpcaoServico]["preco"]
-     }
-     Servicos.append(servico)
-     print("Serviço cadastrado com sucesso!")
-     break
-   else:
-    print("Serviço Indisponivel")
+ Nome_Pet = input("Digite o nome do pet (ou digite 0 para sair): ") 
+ 
+ print("== Serviços ==")
+ print("1 - Banho: R$ 80 ")
+ print("2 - Tosa: R$ 100 ")
+ print("3 - Consulta: R$ 120 ")
+ print("4 - Hospedagem: R$ 150 ")
 
+ while True:
+   try:
+     OpcaoServico = int(input("Selecione um serviço ou (digite 0 para sair):"))
+     if OpcaoServico ==0:
+       break
+     if OpcaoServico in Servicos_Disponiveis:
+       servico ={
+         "pet": Nome_Pet,
+         "servico": Servicos_Disponiveis[OpcaoServico]["nome"],
+         "preco": Servicos_Disponiveis[OpcaoServico]["preco"]
+       }
+       Servicos.append(servico)
+       print("Serviço cadastrado com sucesso!")
+     elif OpcaoServico not in Servicos_Disponiveis:
+       print ("Serviço não disponivel!")
+   except ValueError:
+    print("Entrada invalida, Digite um numero.")
+   
 def Buscar_Pet():
  Opcao_Busca = input("Digite o nome do pet que você deseja pesquisar: ")
- for Pet in Pets:
-   if Pet["NomePet"] == Opcao_Busca:
-     print("Dono:", Pet["NomeDono"])
-     print("Nome: ", Pet["NomePet"])
-     print("Raca: ", Pet["Raca"])
-     print("Sexo: ", Pet["Sexo"])
+ for pet, servicos in zip( Pets,Servicos):
+   if pet["NomePet"] == Opcao_Busca:
+     print("Nome: ", pet["NomePet"])
+     print("Raca: ", pet["Raca"])
+     print("Sexo: ", pet["Sexo"])
+     print("Serviços registrados:",Servicos)
      print("---------------------") 
      break
    else:
@@ -108,6 +112,7 @@ def Buscar_Pet():
 def Relatorio():
  for cliente, pet, servico in zip(Clientes,Pets,Servicos):
    print("Cliente:", cliente , "| Pet:", pet, "| Serviços:", servico)
+
   
 def Exibir_Menu():
  print("== SISTEMA PETSHOP ==")
