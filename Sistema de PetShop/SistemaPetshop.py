@@ -1,4 +1,4 @@
-from Funcoes import Exibir_Menu, Cadastrar_Clientes, Cadastrar_Pets, Listar_Clientes, Listar_Pets,Cadastar_Servicos,Relatorio,Buscar_Pet
+from Funcoes import Exibir_Menu, Cadastrar_Clientes, Cadastrar_Pets, Listar_Clientes, Listar_Pets,Cadastrar_Servicos,Relatorio,Buscar_Pet
 
 Exibir_Menu()
 
@@ -17,7 +17,7 @@ while True:
     Listar_Pets()
     Exibir_Menu()
  elif opcao == '5':
-     Cadastar_Servicos()
+     Cadastrar_Servicos()
      Exibir_Menu()
  elif opcao == '6':
      Relatorio()
