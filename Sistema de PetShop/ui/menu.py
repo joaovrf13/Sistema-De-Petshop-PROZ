@@ -1,0 +1,11 @@
+def Exibir_Menu():
+ print("== SISTEMA PETSHOP ==")
+ print("1 - Cadastrar Cliente")
+ print("2 - Cadastrar Pet")
+ print("3 - Listar Clientes")
+ print("4 - Listar pets")
+ print("5 - Registrar serviço")
+ print("6 - Exibir relatório")
+ print("7 - Buscar pet")
+ print("8 - Faturamento Total")
+ print("9 - Sair")
