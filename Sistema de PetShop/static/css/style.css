@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f4f6f8;
+  font-family: Arial, sans-serif;
+  color: #333
+}
+
+body{
+  display: flex;
+}
+
+.menu{
+  width: 240px;
+  min-height: 100vh;
+  background-color: #2b7a78;
+  color: white;
+  padding: 25px;
+}
+
+.conteudo{
+  flex:1;
+  padding: 30px;
+}
+
+.menu h2{
+  margin-bottom: 30px;
+}
+
+.menu nav{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu a{
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.menu a:hover {
+  background-color: #3aafa9;
+}
+
+.card-inicio{
+  margin-top: 25px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 500px;
+}
+
+.cards{
+  display:flex;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.card{
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+}
+
+.card h3{
+  color:#2b7a78;
+  margin-bottom: 10px;
+}
+
+.area-formulario{
+  margin-top: 25px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 500px;
+}
+
+.area-formulario h2{
+  margin-bottom: 20px;
+}
+
+.area-formulario form{
+  display: flex;
+  flex-direction: column;
+}
+
+.area-formulario label{
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.area-formulario button{
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #2b7a78;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.area-formulario button:hover{
+  background-color: #3aafa9;
+}
+
+.area-formulario input,
+.area-formulario select{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.tabela-clientes{
+  margin-top:  25px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.tabela-clientes h2{
+  margin-bottom: 20px; 
+}
+
+.tabela-clientes table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-clientes th{
+  background-color: #2b7a78;
+  color:white;
+  padding: 12px;
+  text-align: left;
+}
+
+.tabela-clientes td{
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-clientes tr:hover{
+  background-color: #f1f1f1;
+}
