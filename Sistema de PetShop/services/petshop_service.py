@@ -1,40 +1,32 @@
 from repositories.dados import Clientes, Pets, Servicos_Disponiveis
 
-def Cadastrar_Clientes():
- Nome = input("Digite o nome do cliente: ")
- Documento = input("Digite o documento do cliente: ")
- 
+def Cadastrar_Clientes(nome, documento, telefone, endereco):
  ##Validação do Documento do cliente na hora do cadastro.
  ##Esse loop pega o documento digitado e compara com o que aparece dentro
  ##da lista Clientes, caso o documento apareça é enviado um mensagem de error
  ##como podemos ver na linha 15
  
  for Cliente in Clientes:
-   if Cliente["Documento"] == Documento:
+   if Cliente["Documento"] == documento:
      print(" ERROR O cliente já está cadastrado!")
      return
-   
- Telefone = input("Digite o telefone do cliente: ")
- Endereco = input("Digite o endereço do cliente: ")
-
  Cliente = {
-   "Nome" : Nome,
-   "Documento" : Documento,
-   "Telefone": Telefone,
-   "Endereco": Endereco
+   "Nome" : nome,
+   "Documento" : documento,
+   "Telefone": telefone,
+   "Endereco": endereco
    }
 
- Clientes.append(Cliente)#Adiciona o cliente na Lista Clientes  
+ Clientes.append(Cliente)#Adiciona o cliente na Lista Clientes
+ print(Clientes)  
 
 
-def Cadastrar_Pets():
-    NomePet = input("Digite o nome do pet: ")
-    DocumentoDono = input("Digite o documento do dono: ")
+def Cadastrar_Pets(documento, nomedopet, tipopet, servico):
     ##Esse loop serve para garantir que um cliente não cadastre o mesmo pet duas vezes.
     #Um cliente pode ter vários pets, mas não pode ter dois pets com o mesmo nome cadastrado.
     #Ele percorre a lista de pets existentes e, se encontrar um pet com o mesmo nome e mesmo dono, bloqueia o cadastro.
     for Pet in Pets:
-      if Pet["NomePet"] == NomePet and Pet["DocumentoDono"] == DocumentoDono:
+      if Pet["NomePet"] == nomedopet and Pet["DocumentoDono"] == documento:
        print("ERROR o Pet já está cadastrado em nosso sistema")
        return
       
@@ -42,25 +34,21 @@ def Cadastrar_Pets():
     # Se o documento do dono não for encontrado na lista Clientes, 
     # é exibida uma mensagem de erro e o cadastro do pet é cancelado.
     for Cliente in Clientes:
-     if Cliente["Documento"] == DocumentoDono:
+     if Cliente["Documento"] == documento:
        break
     else:
      print("O dono não foi cadastrado. Cadastre o cliente primeiro.")
      return
 
-    Raca = input("Digite a raça do pet: ")
-    Sexo = input("Digite o sexo (M/F): ")
-
      
     Pet = {
-     "NomePet" : NomePet,
-     "Raca" : Raca,
-     "Sexo" : Sexo,
-     "DocumentoDono": DocumentoDono,
-     "Servicos":[] ##Lista vazia para receber todos os serviços que o pet recber 
+     "NomePet" : nomedopet,
+     "TipoPet" : tipopet,
+     "DocumentoDono": documento,
+     "Servicos":servico 
     }
     Pets.append(Pet)
-    print("Cadastro do pet feito com sucesso!")
+    print(Pets)
 
 
 def Cadastrar_Servicos():
